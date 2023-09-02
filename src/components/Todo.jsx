@@ -1,31 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TiTick } from "react-icons/ti";
 import { MdOutlineDelete } from "react-icons/md";
-function Todo({ allTodos }) {
+import "../components/Todo.css";
+function Todo({ allTodos, deleteTodo, completeTodo }) {
+
+    console.log(allTodos);
+
     const todoElements = allTodos.map((item, index) => {
            return (
-            <div key={index}>
-                <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                    
-                </div>
+             <div key={item.id} className="sample">
+               <div>
+                 <h2>{item.title}</h2>
+                 <p>{item.description}</p>
+               </div>
 
-                <div>
-                    <TiTick />
-                    <MdOutlineDelete />
-                </div>
-            </div>
-           )
+               <div>
+                 <button onClick={() => completeTodo(item.id)} className="tick">
+                   <TiTick />
+                 </button>
+                 <button onClick={() => deleteTodo(item.id)} className='delete'>
+                   <MdOutlineDelete />
+                 </button>
+               </div>
+             </div>
+           );
     });
+      const todoItemsToRender = todoElements.filter(
+        (item) => !item.isCompleted
+      );
     return (
       <>
-        <div>
-          <button>Todo's</button>
-          {todoElements}
-        </div>
-        <div>
-          <button>Completed Todo's</button>
+        <div className='sample2'>
+          {todoItemsToRender}
         </div>
       </>
     );

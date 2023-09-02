@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.sample{
+    display: flex;
+    
+}
+.sample2{
+    background-color: #454545;
+    width: 700px;
+    margin-left: -50px;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+.tick{
+  height: 35px;
+  width: 50px;
+}
+.tick:hover{
+    color: green    ;
+}
+.delete{
+  height: 35px;
+  width: 50px;
+}
+.delete:hover{
+    color: red;
+}

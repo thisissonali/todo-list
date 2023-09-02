@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.sample{
+    display: flex;
+    justify-content: space-between; 
+    border-bottom: 1px inset black;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+.bgColorForm{
+    background-color: #454545;
+    height: 180px;
+    width: 700px;
+    margin-left: 400px;
+    margin-top: 60px;
+    padding-left: 50px;
+    padding-top: 30px;
+    color: white ;
+    font-weight: bolder;
+}
+input{
+    margin-top: 3px;
+    border: 1px solid black;
+    height: 25px;
+    width: 230px;
+    padding: 5px;;
+}
+.bgColorr{
+    background-color: #1B1A17;
+    height: 715px;
+    
+}
+.btn{
+    background-color: rgb(91, 173, 91);
+    color:white;
+    margin-top: 20px;
+    width: 80px;
+    margin-right: 5px;
+}
+h1{
+    color: white;
+    padding-left: 650px;
+    padding-top: 50px;
+}
+.tabPending{
+    height:35px;
+    color:white;
+    padding: 10px;
+    background-color:rgb(168, 225, 168) ;
+    border: none;
+    
+}
+.tabPending:hover{
+    background-color: rgb(31, 78, 31);
+    
+}
+.tabPending:focus{
+    background-color: rgb(31, 78, 31);
+}
+.tabSelected {
+    height: 35px;
+    color: white;
+    padding: 10px;
+    background-color: grey;
+    border: none;
+
+}
+.tabSelected:hover{
+    background-color: rgb(41, 41, 41);      
+}
+.tabSelected:focus{
+    background-color: rgb(41, 41, 41);
+}

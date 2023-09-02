@@ -1,12 +1,40 @@
   import React from 'react'
   import { useState , useEffect} from 'react';
   import Todo from './Todo';
+  import { getId } from '../utils/uuid';
+  import '../components/Board.css'
+  
+  export const View = {
+    PENDING: "PENDING",
+    COMPLETED: "COMPLETED",
+  }
  
   function Board() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [view, updateView] = useState(false);  
     const [allTodos, setTodos] = useState([]);
+
+    const [selectedView, setSelectedView] = useState(View.PENDING);
+
+    const deleteTodo = todoId => {
+      setTodos(allTodos.filter(function (todo) {
+        if(todo.id === todoId) return false;
+        return true;
+      }));
+    }
+
+    const completeTodo = todoId => {
+        const newTodos = allTodos.map(todo => {
+            if(todo.id === todoId) {
+              return {
+                ...todo,
+                isCompleted: true,
+              }
+            }
+            return todo;
+        });
+        setTodos(newTodos);
+    }
 
 
     const handleTitleChange = (event) => {
@@ -17,9 +45,10 @@
     };
     const handleClick = (event) => {
       let newTodoItem = {
+        id: getId({ length: 5 }),
         title: title,
         description: description,
-        isCompleted:false
+        isCompleted: false,
       }
 
       let updatedTodoArr = [...allTodos];
@@ -30,19 +59,70 @@
     }
   
     return (
-      <>
-        <form onSubmit={(e) => e.preventDefault()}>
-          <label>Title</label>
-          <input type="text" value={title} onChange={handleTitleChange} />
-
-          <label>Description</label>
-          <input type="text" value={description} onChange={handledescChange} />
-          <button onClick={handleClick}>Add</button>
-
-        </form>
-        <Todo allTodos={allTodos} />
-        
-      </>
+      <div className="bgColorr">
+        <h1>My Todos</h1>
+        <div className="bgColorForm">
+          <form onSubmit={(e) => e.preventDefault()}>
+            <div className="sample">
+              <div>
+                <label>Title: </label>
+                <br />
+                <input
+                  type="text"
+                  value={title}
+                  placeholder="What's the title of your Todo ? "
+                  onChange={handleTitleChange}
+                />
+              </div>
+              <div>
+                <label>Description: </label>
+                <br />
+                <input
+                  type="text"
+                  value={description}
+                  onChange={handledescChange}
+                  placeholder="What's the description of your Todo ? "
+                />
+              </div>
+              <button className="btn" onClick={handleClick}>
+                Add
+              </button>
+            </div>
+          </form>
+          <div>
+            <button
+              onClick={() => setSelectedView(View.PENDING)}
+              // disabled={selectedView === View.PENDING}
+              className="tabPending"
+            >
+              Pending
+            </button>
+            <button
+              onClick={() => setSelectedView(View.COMPLETED)}
+              // disabled={selectedView === View.COMPLETED}
+              className="tabSelected"
+            >
+              Completed
+            </button>
+          </div>
+          <Todo
+            allTodos={allTodos.filter((todo) => {
+              if (selectedView === View.PENDING && todo.isCompleted === false) {
+                return true;
+              } else if (
+                selectedView === View.COMPLETED &&
+                todo.isCompleted === true
+              ) {
+                return true;
+              } else {
+                return false;
+              }
+            })}
+            deleteTodo={deleteTodo}
+            completeTodo={completeTodo}
+          />
+        </div>
+      </div>
     );
   }
 
