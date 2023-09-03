@@ -52,32 +52,14 @@ h1{
     padding-left: 650px;
     padding-top: 50px;
 }
-.tabPending{
+.tabPending , .tabSelected{
     height:35px;
     color:white;
     padding: 10px;
-    background-color:rgb(168, 225, 168) ;
+    background-color:grey ;
     border: none;
     
-}
-.tabPending:hover{
-    background-color: rgb(31, 78, 31);
-    
-}
-.tabPending:focus{
-    background-color: rgb(31, 78, 31);
-}
-.tabSelected {
-    height: 35px;
-    color: white;
-    padding: 10px;
-    background-color: grey;
-    border: none;
-
-}
-.tabSelected:hover{
-    background-color: rgb(41, 41, 41);      
-}
-.tabSelected:focus{
-    background-color: rgb(41, 41, 41);
+}   
+.tabPending:focus , .tabSelected:focus{
+    background-color: rgb(91, 173, 91) ;
 }
