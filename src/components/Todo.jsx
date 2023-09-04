@@ -14,7 +14,7 @@ function Todo({ allTodos, deleteTodo, completeTodo }) {
                  <p>{item.description}</p>
                </div>
 
-               <div>
+               <div className='tickdel'>
                  <button onClick={() => completeTodo(item.id)} className="tick">
                    <TiTick />
                  </button>

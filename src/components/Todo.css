@@ -22,9 +22,13 @@ body {
 .tick{
   height: 40px;
   width: 55px;
-  margin-left: 40vw;
+    
   background-color: rgb(91, 173, 91);
   color: white;
+}
+.tickdel{
+    position: absolute;
+    margin-left: 50vw;
 }
 .tick:hover{
     color: green;

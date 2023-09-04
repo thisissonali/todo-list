@@ -9,24 +9,19 @@ export const View = {
   COMPLETED: "COMPLETED",
 };
 
-// const getLocalItems = () => {
-//   let todoTitle = localStorage.getItem('Title');
-//   let todoDesc = localStorage.getItem('Description'); 
-//   console.log(todoTitle);
-//   console.log(todoDesc);
-//   if (todoTitle) {
-//     return JSON.parse(localStorage.getItem('todoTitle'));
-//   }
-//   if (todoDesc) {
-//       return JSON.parse(localStorage.getItem("todoDesc"));
-//   }
-//   return [];
-  
-// }
+const getLocalItems = () => {
+  let allTodos = localStorage.getItem('allTodos');
+  console.log(allTodos);
+  if (allTodos) {
+    return JSON.parse(localStorage.getItem('allTodos'));
+  } else {
+    return [];
+  }
+}
 function Board() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [allTodos, setTodos] = useState([]);
+  const [allTodos, setTodos] = useState(getLocalItems());
 
   const [selectedView, setSelectedView] = useState(View.PENDING);
 
@@ -73,17 +68,11 @@ function Board() {
     setDescription("");
   };
   useEffect(() => {
-    localStorage.setItem('Title', JSON.stringify(allTodos.map((todoItem) => todoItem.title)));
+    localStorage.setItem('allTodos', JSON.stringify(allTodos));
     
   }, [allTodos]);
   
-  useEffect(() => {
-    localStorage.setItem(
-      "Description",
-      JSON.stringify(allTodos.map((todoItem) => todoItem.description))
-    );
-  }, [allTodos]);
-  
+ 
   return (
     <>
       <div className="bgColorr">
