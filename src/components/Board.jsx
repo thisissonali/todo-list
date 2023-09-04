@@ -9,6 +9,20 @@ export const View = {
   COMPLETED: "COMPLETED",
 };
 
+// const getLocalItems = () => {
+//   let todoTitle = localStorage.getItem('Title');
+//   let todoDesc = localStorage.getItem('Description'); 
+//   console.log(todoTitle);
+//   console.log(todoDesc);
+//   if (todoTitle) {
+//     return JSON.parse(localStorage.getItem('todoTitle'));
+//   }
+//   if (todoDesc) {
+//       return JSON.parse(localStorage.getItem("todoDesc"));
+//   }
+//   return [];
+  
+// }
 function Board() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -58,7 +72,18 @@ function Board() {
     setTitle("");
     setDescription("");
   };
-
+  useEffect(() => {
+    localStorage.setItem('Title', JSON.stringify(allTodos.map((todoItem) => todoItem.title)));
+    
+  }, [allTodos]);
+  
+  useEffect(() => {
+    localStorage.setItem(
+      "Description",
+      JSON.stringify(allTodos.map((todoItem) => todoItem.description))
+    );
+  }, [allTodos]);
+  
   return (
     <>
       <div className="bgColorr">
