@@ -8,9 +8,9 @@ function Todo({ allTodos, deleteTodo, completeTodo }) {
 
     const todoElements = allTodos.map((item, index) => {
            return (
-             <div key={item.id} className="sample">
+             <div key={item.id} className='samplee'>
                <div>
-                 <h2>{item.title}</h2>
+                 <h2 className='heading'>{item.title}</h2>
                  <p>{item.description}</p>
                </div>
 
@@ -30,7 +30,7 @@ function Todo({ allTodos, deleteTodo, completeTodo }) {
       );
     return (
       <>
-        <div className='sample2'>
+        <div >
           {todoItemsToRender}
         </div>
       </>

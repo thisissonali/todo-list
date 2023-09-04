@@ -3,63 +3,97 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+   
 }
 body{
     font-family: 'Roboto', sans-serif;
 }
-.sample{
-    display: flex;
-    justify-content: space-between; 
-    border-bottom: 1px inset black;
-    padding-bottom: 20px;
-    padding-right: 15px;
-    margin-right: 50px;
-    margin-bottom: 20px;
-}
-.bgColorForm{
-    background-color: #454545;
-    height: 180px;
-    width: 700px;
-    margin-left: 400px;
-    margin-top: 60px;
-    padding-left: 50px;
-    padding-top: 30px;
-    color: white ;
+label{
+    color:white;
     font-weight: bolder;
 }
-input{
-    margin-top: 3px;
+.sample{
+    height: 30vh;
+    width: 75vw;
+    background-color: #454545;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: auto;
+    padding-left: 1vw;
+    box-shadow: 4px 4px 5px 5px #2a2929;
+    padding-bottom: 10px;
+}
+input{  
+    margin-top: 10px;
     border: 1px solid black;
-    height: 25px;
-    width: 230px;
-    padding: 5px;;
+    height: 5vh;
+    width: 15vw;
+    padding: 2px;
+}
+.title , .desc{
+    height: 10vh;
+    width: 40vw;
+}
+.title{
+    width: 30vw;
+    height: 10vh;
 }
 .bgColorr{
     background-color: #1B1A17;
-    height: 715px;
-    
+    height: 100vh;
+    width: 100vw;
+}
+.innerDiv{
+    height: 40vh;
+    width: 80vw;
+    margin: auto;
+    margin-top: 40px;
 }
 .btn{
     background-color: rgb(91, 173, 91);
+    margin-left: 3vw;
     color:white;
-    margin-top: 20px;
-    width: 80px;
-    margin-right: 5px;
+    height: 5vh;
+    width: 10vh;
+    margin-bottom: 5px;
+    border: none;
+}
+.btn:hover{
+    background-color: rgb(59, 113, 59);
 }
 h1{
     color: white;
-    padding-left: 650px;
-    padding-top: 50px;
+    text-align: center;
+    padding-top: 10vh;
+}
+.btnPendSelec{
+    height: 6vh;
+    width: 25vw;
+    margin-top: 4.5vh;
+    background-color: #454545;
+    border: none;
 }
 .tabPending , .tabSelected{
-    height:35px;
+    background-color: #454545;
+    height:6vh; 
+    width: 10vw;
     color:white;
-    padding: 10px;
+    padding: 5px;
     background-color:grey ;
     border: none;
     
 }   
+.tabSelected{
+    margin-right: 4.7vw;
+    border-left: 1px solid white;
+}
 .tabPending:focus , .tabSelected:focus{
     background-color: rgb(91, 173, 91) ;
+    
+}
+.desc{
+    display: inline-block;
+    height: 10vh;
+    width: 30vw;
 }

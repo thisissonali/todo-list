@@ -1,36 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-
 body {
     font-family: 'Roboto', sans-serif;
 }
-.sample{
+.samplee{
     display: flex;
-    
-}
-.sample2{
+    height: 15vh;
+    width: 75vw;
     background-color: #454545;
-    width: 700px;
-    margin-left: -50px;
-    padding-top: 20px;
-    padding-left: 50px;
+    align-items: center;
+    margin: auto;
+    padding-left: 1vw;
+    box-shadow: 4px 4px 5px 5px #2a2929;
+    padding-left: 9vw;
+    color: white;   
+    padding-top: 10px;
+}
+.heading{
+    margin-bottom: 5px;
 }
 .tick{
-  height: 35px;
-  width: 50px;
+  height: 40px;
+  width: 55px;
+  margin-left: 40vw;
+  background-color: rgb(91, 173, 91);
+  color: white;
 }
 .tick:hover{
-    color: green    ;
+    color: green;
 }
 .delete{
-  height: 35px;
-  width: 50px;
+  height: 40px;
+  width: 55px;
+  background-color: rgb(243, 76, 76);
+  color: white;
 }
 .delete:hover{
     color: red;
